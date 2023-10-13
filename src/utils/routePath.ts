@@ -1,0 +1,12 @@
+export const DEFAULT_PATH = "/";
+export const ABOUT_PATH = "/about";
+export const BRANDS_PATH = "/brands";
+export const COMMISSIONS_PATH = "/commission";
+export const NEWS_PATH = "/news";
+export const CONTACT_PATH = "/contact";
+export const CAREERS_PATH = "/careers";
+export const LOGIN_PATH = "/login";
+export const REGISTER_PATH = "/register";
+export const TERMS_PATH = "/terms";
+export const COOKIES_PATH = "/cookies";
+export const ERROR_PATH = "*";
