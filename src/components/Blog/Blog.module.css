@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Lexend", sans-serif;
+}
+
+.container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.containerTitle {
+    color: #FFF;
+    font-family: "Lexend", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.cardList {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    border-radius: 75px;
+
+    border: 3px solid #478BF9;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 60%, #ffffff2a 100%);
+
+    backdrop-filter: blur(10px);
+    height: 450px;
+    overflow-y: scroll;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 75px;
+    background: #1E1231;
+
+    padding: 8px 48px;
+    margin: 16px;
+}
+
+.listItem:hover {
+    cursor: pointer;
+    background: #478BF9;
+}
+
+.itemText {
+    color: #FFF;
+    font-family: "Lexend";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.itemDate {
+    color: #ffffff99;
+    font-family: "Futura PT", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 16px;
+    margin-top: 14px;
+}
+
+.scrollable {
+    overflow: auto;
+    margin-right: 20px;
+    scrollbar-color: #478BF9 #FFFFFF1F;
+
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: #478BF9;
+    border-radius: 4px;
+    /* margin: 100px 0px; */
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: #FFFFFF1F;
+    margin: 75px 0px;
+}
