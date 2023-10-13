@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Lexend", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: flex-start;
+
+    position: absolute;
+    top: 50%;
+    left: 42%;
+    right: 50%;
+
+    transform: translateY(-50%);
+    overflow-y: hidden;
+
+    height: calc(100vh - 100px);
+}
+
+.cardList {
+    margin: 0 7.5px;
+}
+
+.cardList li {
+    margin: 0px 0px;
+}
+
+.cardList li svg {
+    max-width: 75px;
+    margin: 0;
+}
+
+.animatedUp {
+    animation: moveUp 4s ease-in-out infinite;
+}
+
+.animatedUpSpeed {
+    animation: moveUpSpeed 6s ease-in-out infinite;
+}
+
+.animatedDown {
+    animation: moveDown 8s ease-in-out infinite;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0vh);
+    }
+
+    50% {
+        transform: translateY(-20vh);
+    }
+
+    100% {
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes moveUpSpeed {
+    0% {
+        transform: translateY(0vh);
+    }
+
+    50% {
+        transform: translateY(-25vh);
+    }
+
+    100% {
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-25vh);
+    }
+
+    50% {
+        transform: translateY(0vh);
+    }
+
+    100% {
+        transform: translateY(-25vh);
+    }
+}
+
+.firstCol li {
+    opacity: 0.6;
+}
+
+.secondCol {
+    opacity: 0.8;
+}
+
+.thirdCol {
+    opacity: 0.6;
+}
+
+.animatedUp li:first-child {
+    animation: animatedUpShadowDown 3s ease-in-out infinite;
+}
+
+.animatedUp li:nth-last-child(1) {
+    animation: animatedUpShadowUp 3s ease-in-out infinite;
+}
+
+@keyframes animatedUpShadowUp {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animatedUpShadowDown {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.animatedDown li:first-child {
+    animation: animatedDownShadowDown 3s ease-in-out infinite;
+}
+
+.animatedDown li:nth-last-child(1) {
+    animation: animatedDownShadowUp 3s ease-in-out infinite;
+}
+
+@keyframes animatedDownShadowUp {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animatedDownShadowDown {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
