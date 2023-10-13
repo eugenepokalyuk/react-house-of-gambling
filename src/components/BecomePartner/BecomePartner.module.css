@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Lexend", sans-serif;
+}
+
+.container {
+    width: 50%;
+}
+
+.card {
+    width: 595px;
+}
+
+.cardTitle {
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 72px;
+    color: #fff;
+
+    font-family: 'Lexend', sans-serif;
+    margin: 0px;
+}
+
+.cardTitleBlue {
+    color: #478BF9;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+
+    font-family: 'Lexend', sans-serif;
+    margin: 0px;
+}
+
+.cardText {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    color: #ffffff99;
+
+    font-family: 'Lexend', sans-serif;
+
+    margin-top: 12px;
+}
+
+.cardButton {
+    border: none;
+    display: flex;
+    padding: 20px 72px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 48px;
+    background: #478BF9;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    text-transform: uppercase;
+
+    margin-top: 48px;
+
+    font-family: 'Lexend', sans-serif;
+}
+
+.cardButton:hover {
+    cursor: pointer;
+    background: linear-gradient(256deg, #478BF9 0%, #9DADF2 100%);
+}
