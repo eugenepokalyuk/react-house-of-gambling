@@ -62,10 +62,10 @@ const App = () => {
                     <div className="mb-4 mt-4">
                     </div>
                     <div>
-                        <p className={`${styles.textOrangeColor} text text_type_main-medium mb-8`}>
+                        <p className={`${styles.textOrangeColor}`}>
                             Пожалуйста подождите
                         </p>
-                        <div className={`${styles.flex} text_color_inactive`}>
+                        <div className={`${styles.flex} ${styles.mt2}`}>
                             <FontAwesomeIcon
                                 icon={faSpinner}
                                 spin

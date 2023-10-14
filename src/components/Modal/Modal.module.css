@@ -3,3 +3,61 @@
 * {
     font-family: "Lexend", sans-serif;
 }
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    z-index: 1056;
+}
+
+.modalContent {
+    position: relative;
+    border-radius: 3vh;
+    background: #1C1C21;
+    text-align: center;
+    min-width: 50vh;
+    color: #fff;
+    padding: 3vh;
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalNoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.closeIcon:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 960px) {
+    .modal {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modalContent {
+        width: 100%;
+        min-width: 0%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .modalContent {
+        width: 100%;
+        min-width: 0%;
+    }
+}
