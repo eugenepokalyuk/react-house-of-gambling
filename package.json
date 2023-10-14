@@ -2,6 +2,7 @@
   "name": "react-house-of-gambling",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -12,7 +13,7 @@
     "@types/node": "^16.18.58",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
-    "gh-pages": "^6.0.0",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.3",
