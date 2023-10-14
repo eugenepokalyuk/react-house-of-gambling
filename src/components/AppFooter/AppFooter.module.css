@@ -135,7 +135,7 @@
 
     .socialCard {
         display: flex;
+        justify-content: space-between;
         margin-top: 1vh;
-        gap: 1.5vh;
     }
 }
