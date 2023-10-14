@@ -6,12 +6,14 @@ h1 {
     padding: 0;
 }
 
-.container {
-    width: 90%;
-    height: 70vh;
-    margin: 0 auto;
+@media screen and (min-width: 1080px) {
+    .container {
+        width: 90%;
+        height: 70vh;
+        margin: 0 auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

@@ -9,46 +9,47 @@
 }
 
 .card {
-    width: 595px;
+    width: 50vh;
 }
 
 .cardTitle {
-    font-size: 72px;
+    font-size: 8vh;
     font-style: normal;
     font-weight: 500;
-    line-height: 72px;
     color: #fff;
+    line-height: 8vh;
 
     font-family: 'Lexend', sans-serif;
-    margin: 0px;
+    margin: 0;
 }
 
 .cardTitleBlue {
-    color: #478BF9;
-    font-size: 72px;
+    font-size: 8vh;
     font-style: normal;
     font-weight: 500;
+    color: #478BF9;
+    line-height: 8vh;
 
     font-family: 'Lexend', sans-serif;
     margin: 0px;
 }
 
 .cardText {
-    font-size: 24px;
+    font-size: 2.5vh;
     font-style: normal;
     font-weight: 500;
-    line-height: 32px;
+    line-height: 2.5vh;
     color: #ffffff99;
 
     font-family: 'Lexend', sans-serif;
 
-    margin-top: 12px;
+    margin-top: 1vh;
 }
 
 .cardButton {
     border: none;
     display: flex;
-    padding: 20px 72px;
+    padding: 1.5vh 6vh;
     justify-content: center;
     align-items: center;
     border-radius: 48px;
@@ -56,13 +57,13 @@
 
     color: #FFF;
     text-align: center;
-    font-size: 18px;
+    font-size: 2vh;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px;
+    line-height: 4vh;
     text-transform: uppercase;
 
-    margin-top: 48px;
+    margin-top: 4vh;
 
     font-family: 'Lexend', sans-serif;
 }
@@ -70,4 +71,45 @@
 .cardButton:hover {
     cursor: pointer;
     background: linear-gradient(256deg, #478BF9 0%, #9DADF2 100%);
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        width: 100%;
+        /* margin-top: 70px; */
+        margin-top: 10vh;
+    }
+
+    .card {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card h1 {
+        font-size: 8vh;
+        text-align: center;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    .card span {
+        font-size: 8vh;
+        text-align: center;
+        font-weight: 500;
+        color: #478BF9;
+    }
+
+    .card p {
+        text-align: center;
+        font-weight: 500;
+        color: #ffffff99;
+        font-size: 3.4vh;
+    }
+
+    .card .cardButton {
+        width: 80%;
+    }
 }

@@ -6,86 +6,136 @@
     font-family: "Lexend", sans-serif;
 }
 
-.footer {
-    display: flex;
-    align-items: center;
+@media screen and (min-width: 450px) {
+    .footer {
+        display: flex;
+        align-items: center;
 
-    margin: 0 auto;
+        margin: 0 auto;
 
-    width: 100%;
+        width: 100%;
 
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        padding: 1vh 6vh;
+
+        border-top: 0.3vh solid #478BF9;
+        border-left: 0.3vh solid #478BF9;
+        border-right: 0.3vh solid #478BF9;
+
+        border-radius: 4vh 4vh 0 0;
+        background: #1E1231;
+    }
+
+    .profileContainer {
+        display: flex;
+    }
+
+    .link {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 2vh;
+        font-weight: 400;
+
+        font-size: 1.25vh;
+    }
+
+    .link:hover {
+        color: #478BF9;
+        text-decoration-line: underline;
+    }
+
+    .socialCard {
+        display: flex;
+        list-style-type: none;
+        margin-top: 1vh;
+        max-width: 30vh;
+    }
+
+    .socialCard li svg path {
+        transition: fill 0.3s ease;
+        cursor: pointer;
+    }
+
+    .socialCard li svg:hover path:first-child {
+        filter: brightness(1.5);
+    }
+
+    .socialCard li {
+        margin: 0px 0.3vh;
+    }
+
+    .colorWhite {
+        color: #fff;
+    }
+
+    .textAlignRight {
+        text-align: right;
+    }
+
+    .textAlignRight h3 {
+        font-size: 1.25vh;
+    }
+
+    .socialCard li svg {
+        width: 100%;
+        height: 100%;
+        margin-right: 0.5vh;
+    }
 }
 
-.nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+@media screen and (max-width: 450px) {
+    .footer {
+        width: 100%;
+        border-radius: 50px 50px 0px 0px;
 
-    padding: 24px 48px;
-    margin-bottom: 24px;
+        margin-top: 20vh;
 
-    border-top: 4px solid #478BF9;
-    border-left: 4px solid #478BF9;
-    border-right: 4px solid #478BF9;
+        background: #1E1231;
+    }
 
-    border-radius: 64px 64px 0px 0px;
-    background: #1E1231;
-}
+    .nav {
+        padding: 3vh;
+        border-radius: 50px 50px 0px 0px;
+        border-top: 2px solid #478BF9;
+        border-right: 2px solid #478BF9;
+        border-left: 2px solid #478BF9;
+    }
 
-.profileContainer {
-    display: flex;
-}
+    .socialContainer {
+        margin-top: 3vh;
+        color: #fff;
+    }
 
-.link {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 32px;
-    font-weight: 400;
-}
+    .socialContainer h3 {
+        font-weight: 400;
+    }
 
-.link:hover {
-    color: #478BF9;
-    text-decoration-line: underline;
-}
+    .linksContainer a {
+        color: #fff;
+        font-weight: 400;
+        text-decoration: none;
+    }
 
-.socialCard {
-    display: flex;
-    list-style-type: none;
-    margin-top: 14px;
-}
 
-/* .socialCard svg {
-    position: relative;
-    fill: red;
-    cursor: pointer;
-} */
+    .linksContainer {
+        display: flex;
+        flex-direction: column;
+    }
 
-/* .socialCard li svg:hover g path:first-child {} */
-
-.socialCard li svg path {
-    transition: fill 0.3s ease;
-    cursor: pointer;
-}
-
-.socialCard li svg:hover path:first-child {
-    /* fill: blue; */
-    filter: brightness(1.5);
-}
-
-.socialCard li {
-    margin: 0px 4px;
-}
-
-.colorWhite {
-    color: #fff;
-}
-
-.textAlignRight {
-    text-align: right;
+    .socialCard {
+        display: flex;
+        margin-top: 1vh;
+        gap: 1.5vh;
+    }
 }

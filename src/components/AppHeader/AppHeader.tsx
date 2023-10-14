@@ -1,7 +1,6 @@
 import styles from './AppHeader.module.css';
 import { NavLink, useMatch } from 'react-router-dom';
 import {
-    DEFAULT_PATH,
     ABOUT_PATH,
     BRANDS_PATH,
     COMMISSIONS_PATH,
@@ -13,14 +12,16 @@ import {
 } from '../../utils/routePath';
 import { ReactComponent as LanguageIcon } from '../../images/icons/svg/language.svg';
 import { useAppDispatch } from '../../services/hooks/hooks';
-import { FETCH_BLOG_REQUEST } from '../../services/actions/blog';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { FETCH_SWITCH_LANGUAGE_REQUEST, FETCH_SWITCH_LANGUAGE_SUCCESS } from '../../services/actions/settings';
+import { EN, RU } from '../../utils/const';
+import { useMediaQuery } from "react-responsive";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const AppHeader = () => {
+const AppHeader: FC = () => {
     const dispatch = useAppDispatch();
 
-    const homeRoute = useMatch(DEFAULT_PATH);
     const aboutRoute = useMatch(ABOUT_PATH);
     const brandsRoute = useMatch(BRANDS_PATH);
     const commissionsRoute = useMatch(COMMISSIONS_PATH);
@@ -29,11 +30,8 @@ const AppHeader = () => {
     const careersRoute = useMatch(CAREERS_PATH);
     const loginRoute = useMatch(LOGIN_PATH);
     const registerRoute = useMatch(REGISTER_PATH);
-
-    const EN = "EN";
-    const RU = "RU";
-
     const [language, setLanguage] = useState(EN)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const hangleSwitchLanguage = () => {
         dispatch({ type: FETCH_SWITCH_LANGUAGE_REQUEST });
@@ -46,53 +44,142 @@ const AppHeader = () => {
         }
     }
 
+    const isDesktop = useMediaQuery({
+        query: "(min-width: 1224px)"
+    });
+
+    const handleMenuClick = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const DesktopView: FC = () => (
+        <nav className={styles.nav}>
+
+            <div className={styles.linksContainer}>
+                <NavLink to="/" className={`${styles.link} ${aboutRoute ? styles.linkActive : styles.link}`}>
+                    About us
+                </NavLink>
+
+                <NavLink to="/store" className={`${styles.link} ${brandsRoute ? styles.linkActive : styles.link}`}>
+                    Brands
+                </NavLink>
+
+                <NavLink to="/warehouse" className={`${styles.link} ${commissionsRoute ? styles.linkActive : styles.link}`}>
+                    Commissions
+                </NavLink>
+
+                <NavLink to="/stat-session" className={`${styles.link} ${newsRoute ? styles.linkActive : styles.link}`}>
+                    News
+                </NavLink>
+
+                <NavLink to="/stat" className={`${styles.link} ${contactRoute ? styles.linkActive : styles.link}`}>
+                    Contact us
+                </NavLink>
+
+                <NavLink to="/settings" className={`${styles.link} ${careersRoute ? styles.linkActive : styles.link}`}>
+                    Careers
+                </NavLink>
+            </div>
+
+            <div className={styles.profileContainer}>
+                <button className={`${styles.link} ${styles.linkWithIcon} ${styles.linkButton}`} onClick={hangleSwitchLanguage}>
+                    <LanguageIcon />
+                    {language}
+                </button>
+
+                <NavLink to="/profile" className={`${styles.link} ${styles.linkButton} ${loginRoute ? styles.linkActive : styles.link}`}>
+                    Log in
+                </NavLink>
+
+                <NavLink to="/profile" className={`${styles.link} ${styles.linkButton} ${registerRoute ? styles.linkActive : styles.link}`}>
+                    Sign up
+                </NavLink>
+            </div>
+
+        </nav>
+    );
+
+    const MobileView: FC = () => (
+        <nav className={styles.nav}>
+            <button
+                className={styles.linkLanguageIcon}
+                onClick={hangleSwitchLanguage}
+            >
+                <LanguageIcon />
+            </button>
+
+            <FontAwesomeIcon
+                icon={faBars}
+                size="2x"
+                onClick={handleMenuClick}
+                className={styles.menuIconBar}
+            />
+
+            {isMenuOpen && (
+                <div className={styles.menu}>
+                    <ul>
+                        <NavLink to='/' className={styles.menuLink}>
+                            <li className={`${styles.menuItem} text text_type_main-medium`}>
+                                About us
+                            </li>
+                        </NavLink>
+
+                        <NavLink to='/' className={styles.menuLink}>
+                            <li className={`${styles.menuItem} text text_type_main-medium`}>
+                                Brands
+                            </li>
+                        </NavLink>
+
+                        <NavLink to='/' className={styles.menuLink}>
+                            <li className={`${styles.menuItem} text text_type_main-medium`}>
+                                Commissions
+                            </li>
+                        </NavLink>
+
+                        <NavLink to='/' className={styles.menuLink}>
+                            <li className={`${styles.menuItem} text text_type_main-medium`}>
+                                News
+                            </li>
+                        </NavLink>
+
+                        <NavLink to='/' className={styles.menuLink}>
+                            <li className={`${styles.menuItem} text text_type_main-medium`}>
+                                Contact us
+                            </li>
+                        </NavLink>
+
+                        <NavLink to='/' className={styles.menuLink}>
+                            <li className={`${styles.menuItem} text text_type_main-medium`}>
+                                Careers
+                            </li>
+                        </NavLink>
+                    </ul>
+
+                    <ul>
+                        <NavLink to='/' className={styles.menuLink}>
+                            <button className={`${styles.menuItem} text text_type_main-medium`}>
+                                Log in
+                            </button>
+                        </NavLink>
+
+                        <NavLink to='/' className={styles.menuLink}>
+                            <button className={`${styles.menuItem} text text_type_main-medium`}>
+                                Sign up
+                            </button>
+                        </NavLink>
+                    </ul>
+                </div>
+            )}
+        </nav>
+    );
+
     return (
         <header className={styles.header}>
-            <nav className={styles.nav}>
-
-                <div className={styles.linksContainer}>
-                    <NavLink to="/" className={`${styles.link} ${aboutRoute ? styles.linkActive : styles.link}`}>
-                        About us
-                    </NavLink>
-
-                    <NavLink to="/store" className={`${styles.link} ${brandsRoute ? styles.linkActive : styles.link}`}>
-                        Brands
-                    </NavLink>
-
-                    <NavLink to="/warehouse" className={`${styles.link} ${commissionsRoute ? styles.linkActive : styles.link}`}>
-                        Commissions
-                    </NavLink>
-
-                    <NavLink to="/stat-session" className={`${styles.link} ${newsRoute ? styles.linkActive : styles.link}`}>
-                        News
-                    </NavLink>
-
-                    <NavLink to="/stat" className={`${styles.link} ${contactRoute ? styles.linkActive : styles.link}`}>
-                        Contact us
-                    </NavLink>
-
-                    <NavLink to="/settings" className={`${styles.link} ${careersRoute ? styles.linkActive : styles.link}`}>
-                        Careers
-                    </NavLink>
-                </div>
-
-                {/* <div className={styles.mr8}> */}
-                <div className={styles.profileContainer}>
-                    <button className={`${styles.link} ${styles.linkWithIcon} ${styles.linkButton}`} onClick={hangleSwitchLanguage}>
-                        <LanguageIcon />
-                        {language}
-                    </button>
-
-                    <NavLink to="/profile" className={`${styles.link} ${styles.linkButton} ${loginRoute ? styles.linkActive : styles.link}`}>
-                        Log in
-                    </NavLink>
-
-                    <NavLink to="/profile" className={`${styles.link} ${styles.linkButton} ${registerRoute ? styles.linkActive : styles.link}`}>
-                        Sign up
-                    </NavLink>
-                </div>
-
-            </nav>
+            {
+                isDesktop
+                    ? <DesktopView />
+                    : <MobileView />
+            }
         </header>
     );
 }
