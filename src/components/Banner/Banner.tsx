@@ -9,6 +9,7 @@ import { ReactComponent as Timer } from "../../images/banner/Timer.svg"
 import { ReactComponent as Crown } from "../../images/banner/Crown.svg"
 import { ReactComponent as CrownBig } from "../../images/banner/CrownBig.svg"
 import { ReactComponent as World } from "../../images/banner/World.svg"
+import { useMediaQuery } from "react-responsive";
 
 export const Banner: FC = () => {
     const [columnCount, setColumnCount] = useState(4);
@@ -16,7 +17,7 @@ export const Banner: FC = () => {
     useEffect(() => {
         const handleResize = () => {
             if (window.screen.height < 1024) {
-                setColumnCount(8); // Установите количество элементов в столбцах для ширины экрана менее 1024px
+                setColumnCount(2); // Установите количество элементов в столбцах для ширины экрана менее 1024px
             } else {
                 setColumnCount(4); // Установите стандартное количество элементов в столбцах для ширины экрана 1024px и больше
             }
@@ -30,6 +31,26 @@ export const Banner: FC = () => {
             window.removeEventListener("resize", handleResize); // Удалите обработчик события при размонтировании компонента
         };
     }, []);
+
+    const isDesktop = useMediaQuery({
+        query: "(min-width: 1224px)"
+    });
+
+    const DesktopView: FC = () => (<>
+        <div className={styles.overlayLayout}></div>
+        {columnFirst()}
+        {columnSecond()}
+        {columnThird()}
+    </>)
+
+    const MobileView: FC = () => (
+        <>
+            <div className={styles.overlayLayout}></div>
+            {columnFirst()}
+            {columnSecond()}
+            {columnThird()}
+        </>
+    )
 
     const columnFirst = () => {
         return (
@@ -108,9 +129,11 @@ export const Banner: FC = () => {
     }
     return (
         <article className={styles.container}>
-            {columnFirst()}
-            {columnSecond()}
-            {columnThird()}
+            {
+                isDesktop
+                    ? <DesktopView />
+                    : <MobileView />
+            }
         </article>
     );
 };

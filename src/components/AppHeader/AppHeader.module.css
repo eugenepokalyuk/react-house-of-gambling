@@ -6,22 +6,24 @@
 }
 
 .header {
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
 
     margin: 0 auto;
     width: 90%;
-    margin-top: calc(4 * 4px);
+    margin-top: 1vh;
+    background: #110A1D;
 }
 
 .nav {
-    width: 100%;
+    height: 2vh;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
 
-    padding: 24px 48px;
-    border: 4px solid #478BF9;
-    border-radius: 64px;
+    padding: 2vh 4vh;
+    border: 0.3vh solid #478BF9;
+    border-radius: 4vh;
 
     background: #110A1D;
     z-index: 1000;
@@ -37,13 +39,24 @@
 
 .profileContainer {
     display: flex;
+    align-items: center;
+}
+
+.profileContainer a,
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1vh;
 }
 
 .link {
     color: #fff;
     text-decoration: none;
-    margin-left: 32px;
+    margin-left: 2vh;
     font-weight: 400;
+
+    font-size: 1.25vh;
 }
 
 .link:hover {
@@ -54,17 +67,20 @@
     display: flex;
     align-items: center;
 }
+
 .linkWithIcon svg {
-    margin-right: 8px;
+    margin-right: 0.5vh;
+    /* width: 100%; */
+    /* height: 100%; */
 }
 
 .linkButton {
-    border-radius: 24px;
-    border: 2px solid #9DADF2;
+    border-radius: 4vh;
+    border: 0.25vh solid #9DADF2;
     background: #110A1D;
     padding: 14px;
 
-    font-size: 16px;
+    /* font-size: 16px; */
     text-transform: uppercase;
 
     font-weight: 400;
@@ -76,4 +92,82 @@
     color: #fff;
     background: #478BF9;
     border-color: #478BF9;
+}
+
+@media screen and (max-width: 450px) {
+    .menuIconBar {
+        color: #ccc;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-top: 4vh;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 8vh;
+        left: 0;
+        z-index: 10;
+
+        background-color: #110A1D;
+    }
+
+    .menuLink {
+        width: 90%;
+        text-decoration: none;
+
+        display: flex;
+        justify-content: center;
+
+        margin-top: 1vh;
+    }
+
+    .menuLink button {
+        border: 0.3vh solid #9DADF2;
+        background: #1E1231;
+        text-transform: uppercase;
+    }
+
+    .menuLink button:active,
+    .menuLink li:active {
+        background: #478BF9;
+        border-color: #478BF9;
+    }
+
+    .menuItem {
+        width: 100%;
+        border: 0.3vh solid #478BF9;
+        border-radius: 3vh;
+
+        font-size: 3vh;
+        color: #fff;
+
+        padding: 1vh 2vh;
+    }
+
+    .linkLanguageIcon {
+        background: transparent;
+        border: none;
+        border: 0.3vh solid #478BF9;
+        border-radius: 3vh;
+        padding: 1vh;
+        margin-right: 1.5vh;
+    }
 }
